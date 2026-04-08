@@ -133,3 +133,90 @@ overlay.addEventListener('click', () => {
         closeSidebar('login');
     }
 });
+
+
+// Sticky header functionality
+const header = document.querySelector('.header');
+const onlineCustom = document.querySelector('.online-custom');
+const mainContainer = document.querySelector('.main-container');
+
+function wrapOnlineCustomContent() {
+    const onlineCustomContent = onlineCustom.innerHTML;
+    onlineCustom.innerHTML = `
+        <div class="online-custom-container">
+            <div class="online-custom-left">
+                ${onlineCustomContent}
+            </div>
+            <div class="online-custom-right">
+                <div class="search-bar">
+                    <i class='bx bx-search'></i>
+                    <input type="text" placeholder="Search for restaurants and food">
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+wrapOnlineCustomContent();
+
+
+const headerHeight = header.offsetHeight;
+const onlineCustomInitialPos = onlineCustom.getBoundingClientRect().top + window.scrollY - headerHeight;
+
+function handleScroll() {
+    const scrollPosition = window.scrollY;
+    
+    if (scrollPosition >= onlineCustomInitialPos) {
+        if (!onlineCustom.classList.contains('sticky')) {
+            onlineCustom.classList.add('sticky');
+            header.style.display = 'none';
+            mainContainer.style.marginTop = '80px';
+        }
+    } else {
+        if (onlineCustom.classList.contains('sticky')) {
+            onlineCustom.classList.remove('sticky');
+            header.style.display = 'block';
+            mainContainer.style.marginTop = '0';
+        }
+    }
+}
+
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+window.addEventListener('scroll', debounce(handleScroll, 10));
+
+const filterButtons = document.querySelectorAll('.custom-options');
+filterButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        // Prevent any scroll jumps when clicking filters
+        if (onlineCustom.classList.contains('sticky')) {
+            e.preventDefault();
+            const buttonRect = button.getBoundingClientRect();
+            // Adjust any popups or dropdowns to position relative to the sticky header
+            // This ensures proper positioning when the header is sticky
+            if (button.classList.contains('sortby-btn')) {
+                const sortbyDropdown = document.querySelector('.sortby-dropdown');
+                if (sortbyDropdown) {
+                    sortbyDropdown.style.top = buttonRect.bottom + 'px';
+                    sortbyDropdown.style.left = buttonRect.left + 'px';
+                }
+            }
+        }
+    });
+});
+
+window.addEventListener('resize', debounce(() => {
+    if (onlineCustom.classList.contains('sticky')) {
+        handleScroll();
+    }
+}, 250));
