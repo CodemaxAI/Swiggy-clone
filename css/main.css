@@ -331,3 +331,76 @@ main {
 .search-bar:focus-within i {
     color: #ff5200;
 }
+
+/* main container user */
+
+.user-browse {
+    padding: 0 20px;
+    margin-bottom: 50px;
+}
+
+.main-container-user {
+    max-width: 1230px;
+    width: 1230px;
+    margin: 0 auto;
+}
+
+.mcu-section {
+    margin-bottom: 50px;
+    padding: 10px 0px;
+    text-align: left;
+}
+
+.mcu-section:last-child {
+    margin-bottom: 0px;
+}
+
+.mcu-section h2 {
+    font-family: 'Inter';
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 28px;
+    color: #02060ceb;
+    margin: 0;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.mcu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    justify-content: space-between; 
+    max-width: 100%;
+}
+
+.mcu-item {
+    color: #02060ceb;
+    font-family: 'Inter';
+    padding: 15px 5px;
+    border: 1px solid #02060c26;
+    border-radius: 10px;
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.mcu-item:hover {
+    background-color: #f0f0f0;
+}
+
+.mcu-item-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #ff5200;
+}
+
+.mcu-item-more i {
+    font-size: 20px;
+    font-weight: bold;
+}
