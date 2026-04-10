@@ -1,0 +1,137 @@
+.footer {
+    padding: 0 20px;
+    border-top: 1px solid rgba(2, 6, 12, 0.75);
+    background-color: rgb(240, 240, 245);
+}
+
+.footer-container {
+    max-width: 1230px;
+    width: 1230px;
+    margin: 0 auto;
+}
+
+.download {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 0px 32px 0px;
+}
+
+.download h2 {
+    font-family: 'Inter';
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 28px;
+    color: #02060ceb;
+    margin: 0;
+}
+
+.store {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.store a {
+    text-decoration: none;
+    margin: 0px 12px;
+}
+
+.store-app img {
+    display: block;
+    width: 150px;
+    height: 45px;
+}
+
+/* footer content section */
+
+.footer-content-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 0px 32px 0px;
+}
+
+.fcl-logo  {
+    margin-bottom: 8px;
+}
+
+.fcl-desc {
+    font-size: 16px;
+    color: rgba(2, 6, 12, 0.6);
+}
+
+.footer-content-right {
+    display: flex;
+    gap: 20px;
+}
+
+.fcr-column {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+.fcr-column h3 , .fcr-column-section h3 {
+    font-family: 'Inter';
+    font-size: 18px;
+    font-weight: 600;
+    color: #02060ceb;
+    margin-bottom: 12px;
+}
+
+.fcr-column a , .fcr-column-section a {
+    font-family: 'Inter';
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #02060c99;
+}
+
+.fcr-column a:hover , .fcr-column-section a:hover {
+    color: #02060ceb;
+}
+
+.fcr-column-section:first-child {
+    margin-bottom: 50px;
+}
+
+.fcr-column-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-link i {
+    margin-right: 10px;
+    font-size: 22px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.social-link i:last-child {
+    margin-right: 0; 
+}
+
+.city-delivery-btn {
+    font-family: 'Inter';
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 120px;
+    padding: 6px 8px;
+    background-color: rgb(240, 240, 245);
+    border: 1px solid #02060c26;
+    color: #02060c99;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.city-delivery-btn i {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.city-delivery-btn:hover {
+    color: #02060ceb;
+}
