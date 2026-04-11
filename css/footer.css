@@ -135,3 +135,47 @@
 .city-delivery-btn:hover {
     color: #02060ceb;
 }
+
+/* city delivery modal */
+
+.city-delivery-modal {
+    display: none;
+    background-color: rgb(240, 240, 245);
+}
+
+.city-delivery-modal.show {
+    display: block;
+}
+
+.modal-container {
+    border-top: 1px solid rgba(2, 6, 12, 0.75);
+    max-width: 1230px;
+    width: 1230px;
+    margin: 0 auto;
+    padding: 40px 100px;
+}
+
+.modal-container h3 {
+    font-family: 'Inter';
+    font-size: 18px;
+    font-weight: 600;
+    color: #02060ceb;
+    margin-bottom: 24px;
+}
+
+.cities-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.city-item {
+    font-family: 'Inter';
+    color: #02060c99;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.city-item:hover {
+    color: #02060ceb;
+}
