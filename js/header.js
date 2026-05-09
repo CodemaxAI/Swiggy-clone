@@ -40,7 +40,7 @@ const createAuthForm = (isLogin = true) => {
                         <p class="login-text">or <span class="create-account">${isLogin ? 'create an account' : 'login to your account'}</span></p>
                     </div>
                     <div class="login-content-header-right">
-                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/Image-login_btpq7r" alt="Login">
+                        <img src="images/image-login.avif" alt="Login">
                     </div>
                 </div>
                 <div class="login-form">
